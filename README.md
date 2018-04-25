@@ -1,6 +1,6 @@
 # SMA Cluster Controller Python Web Scraper
 
-![Diagram showing the modbus timing constraints of an SMA Cluster Controller](https://raw.githubusercontent.com/AlsoEnergyMPT/SMA-Cluster-Controller-Python-Web-Scraper/blob/master/CC%20Modbus%20Timing%20Constraints.PNG)
+![Diagram showing the modbus timing constraints of an SMA Cluster Controller](https://raw.githubusercontent.com/AlsoEnergyMPT/SMA-Cluster-Controller-Python-Web-Scraper/master/CC%20Modbus%20Timing%20Constraints.PNG)
 
 Typically an SMA Cluster Controller takes between 5 and 10 seconds to respond to a modbus TCP request, even when it originates from within the local network. On top of this, the Cluster Controller requires that requests for data are made at least 10 seconds apart. Once the cluster controller receives a modbus request, it converts it to a Speedwire request that it sends out to the connected inverters. Each inverter has a response time of roughly 1 second, and cannot submit more than 30 data points within the scope of a single request. All of this ends up creating a large temporal barrier when trying to poll inverters for data with a granularity of less than 1-minute.
 
